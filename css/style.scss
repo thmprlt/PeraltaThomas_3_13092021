@@ -1,3 +1,371 @@
-body{
-    width: 100%;
+@font-face {
+    font-family: 'robotoregular';
+    src: url('Roboto-Regular-webfont.woff');
+}
+
+@font-face {
+    font-family: 'shrikhandregular';
+    src: url('Shrikhand-Regular.otf');
+}
+
+* {
+    font-family: 'robotoregular';
+}
+
+.h2menu {
+    font-family: 'shrikhandregular';
+}
+
+@media screen and (max-width: 667px) {
+
+    body {
+        width: 100%;
+        margin: auto;
+    }
+
+    .headimg {
+        display: flex;
+        justify-content: center;
+        object-fit: cover;
+        padding: .2rem 0 .5rem 0;
+        height: 1.5rem;
+    }
+
+    .omfimg {
+        display: flex;
+        height: 1rem;
+        padding-top: 5%;
+    }
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .ville {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: rgb(224, 224, 224);
+        padding: 10px 0 10px 40px;
+        border-top: 3px solid rgb(206, 206, 206);
+
+        i {
+            padding-right: 3%;
+            margin-top: 0.10rem;
+        }
+
+        input {
+            background-color: transparent;
+            border: 0px solid;
+        }
+
+        ::placeholder {
+            font-weight: bold;
+            color: black;
+            font-size: 14px;
+        }
+    }
+
+    .reservation {
+        background-color: rgb(238, 238, 238);
+        padding: 10px 0 50px 0;
+        text-align: center;
+
+        h2 {
+            font-size: 24px;
+        }
+
+        p {
+            color: rgb(100, 100, 100);
+            margin-top: -3%;
+        }
+
+        button {
+            border: 0;
+            text-align: center;
+            background: linear-gradient(#FF79DA, #9356DC);
+            padding: .70rem 1rem;
+            border-radius: 100px;
+            font-size: 16px;
+            color: white;
+            margin-top: 2%;
+            cursor: pointer;
+            box-shadow: .2rem .2rem 10px rgb(172, 172, 172);
+            transition: 0.4s;
+
+            &:hover {
+                box-shadow: .2rem .2rem 10px rgb(105, 105, 105);
+                filter: brightness(110%);
+            }
+        }
+    }
+
+    .listefonction h2 {
+        padding-left: .80rem;
+    }
+
+    ol {
+        list-style-type: none;
+        counter-reset: compteListe;
+        padding: 0 1rem 0 1rem;
+
+        .fonc {
+            display: flex;
+            background-color: rgb(247, 247, 247);
+            box-shadow: .2rem .2rem 10px rgb(172, 172, 172);
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 1rem;
+            font-weight: bold;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.4s;
+
+            &:hover {
+                background-color: #e5d5f8;
+            }
+
+            &::before {
+                counter-increment: compteListe;
+                content: counter(compteListe);
+                font-weight: lighter;
+                color: white;
+                background: #9356DC;
+                height: 1.5rem;
+                width: 1.5rem;
+                border-radius: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: .80rem;
+            }
+
+            i {
+                color: rgb(150, 150, 150);
+                padding: 0 1.5rem 0 1.5rem;
+            }
+        }
+    }
+
+    .backgreyresto {
+        background-color: rgb(247, 247, 247);
+        margin-top: 4rem;
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        h2 {
+            padding-left: .80rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            display: flex;
+        }
+
+        figure {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                background-color: white;
+                border-radius: 1rem;
+
+            img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 12rem;
+                    border-radius: 1rem 1rem 0 0;
+            }
+
+            figcaption {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+
+                h3 {
+                    margin: .5rem 0 0 .5rem;
+                    width: 75%;
+                }
+
+                p {
+                    margin: .2rem 0 .5rem .5rem;
+                }
+
+                .far.fa-heart {
+                    position: absolute;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 6%;
+                    right: 18%;
+                    font-size: 22px;
+                    cursor: pointer;
+                    transition: 0.4s;
+
+                    &:hover {
+                        visibility: hidden;
+                    }
+                }
+
+                .fa.fa-heart {
+                    position: absolute;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 6%;
+                    right: 18%;
+                    font-size: 22px;
+                    cursor: pointer;
+                    transition: 0.4s;
+
+
+                    &:hover {
+                        background: linear-gradient(#FF79DA, #9356DC);
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        font-size: 26px;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+
+        background-color: rgb(49, 49, 49);
+        color: white;
+
+        div {
+            padding: 1rem 0 0 1.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0 0 1.5rem 1.5rem;
+
+            li {
+                padding-bottom: .3rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+
+    /* MENUS */
+    .imgmenu {
+        display: flex;
+        height: 1.5rem;
+        justify-content: center;
+        background: white;
+        padding-bottom: .5rem;
+        
+        i {
+            position: absolute;
+            left: 5%;
+            color: black;
+        }
+    }
+
+    .bodypalette {
+        background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+        background-size: 100%;
+    }
+
+    .bodydelice {
+        background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+        background-size: 100%;
+    }
+
+    .bodynote {
+        background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+        background-size: 100%;
+    }
+
+    .bodyfr {
+        background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+        background-size: 100%;
+    }
+
+    .mainmenu {
+        background: rgb(247, 247, 247);
+        border-radius: 35px 35px 0 0;
+        margin-top: 10rem;
+    }
+
+    .titleheart {
+        display: flex;
+        align-items: center;
+        padding-top: .5rem;
+
+        i {
+            position: absolute;
+            right: 2rem;
+            font-size: 24px;
+        }
+    }
+
+    .platsmenu {
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        p {
+            font-size: 15px;
+        }
+
+        h4 {
+            font-size: 17px;
+        }
+
+        button {
+            border: 0;
+            text-align: center;
+            background: linear-gradient(#FF79DA, #9356DC);
+            padding: .70rem 1rem;
+            margin: 0 6rem 2.5rem 6rem;
+            border-radius: 100px;
+            font-size: 16px;
+            color: white;
+            margin-top: 2%;
+            cursor: pointer;
+            box-shadow: .2rem .2rem 10px rgb(172, 172, 172);
+            transition: 0.4s;
+
+            &:hover {
+                box-shadow: .2rem .2rem 10px rgb(105, 105, 105);
+                filter: brightness(110%);
+            }
+        }
+    }
+
+    .epa {
+        background: white;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        
+        h4 {
+            padding: .5rem 0 0 1rem;
+            margin: 0;
+        }
+
+        p {
+            padding: 0 0 .5rem 1rem;
+            margin: 0;
+
+            strong {
+                position: absolute;
+                right: 2rem;
+            }
+        }
+    }
 }

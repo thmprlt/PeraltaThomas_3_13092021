@@ -6,6 +6,70 @@
   font-family: "shrikhandregular";
   src: url("Shrikhand-Regular.otf");
 }
+#loader {
+  border: 10px solid #F3F3F3;
+  border-top: 10px solid #9356DC;
+  border-bottom: 10px solid #FF79DA;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear forwards;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.epa, .epa2, .epa3 {
+  animation: 0.5s linear forwards slide;
+}
+
+.epa {
+  animation-delay: 0s;
+}
+
+.epa2 {
+  animation-delay: 0.1s;
+}
+
+.epa3 {
+  animation-delay: 0.2s;
+}
+
+@keyframes slide {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 * {
   font-family: "robotoregular";
 }
@@ -114,20 +178,18 @@ ol .fonc {
 ol .fonc:hover {
   background-color: #e5d5f8;
 }
-ol .fonc::before {
-  counter-increment: compteListe;
-  content: counter(compteListe);
+ol .fonc .number {
   font-weight: lighter;
+  display: flex;
+  position: absolute;
+  left: 1%;
   color: white;
   background: #9356DC;
   height: 1.5rem;
   width: 1.5rem;
-  border-radius: 1rem;
-  display: flex;
+  border-radius: 50%;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  left: 0.8rem;
 }
 ol .fonc i {
   color: #969696;
@@ -164,6 +226,16 @@ ol .fonc i {
   width: 100%;
   height: 12rem;
   border-radius: 1rem 1rem 0 0;
+}
+.backgreyresto figure .new {
+  display: flex;
+  position: absolute;
+  right: 3rem;
+  background-color: #99E2D0;
+  color: #318d78;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 8px 6px 8px;
 }
 .backgreyresto figure figcaption {
   display: flex;
@@ -308,7 +380,16 @@ footer ul a {
 .platsmenu h4 {
   font-size: 17px;
 }
-.platsmenu button {
+.platsmenu .h3menu {
+  border-bottom: 3px solid #99E2D0;
+  width: 10%;
+}
+.platsmenu .btndiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.platsmenu .btndiv .btn-menu {
   border: 0;
   text-align: center;
   background: linear-gradient(#FF79DA, #9356DC);
@@ -322,32 +403,32 @@ footer ul a {
   box-shadow: 0.2rem 0.2rem 10px #acacac;
   transition: 0.4s;
 }
-.platsmenu button:hover {
+.platsmenu .btndiv .btn-menu:hover {
   box-shadow: 0.2rem 0.2rem 10px dimgray;
   filter: brightness(110%);
 }
 
-.epa {
+.epa, .epa2, .epa3 {
   background: white;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
 }
-.epa h4 {
+.epa h4, .epa2 h4, .epa3 h4 {
   padding: 0.5rem 0 0 1rem;
   margin: 0;
 }
-.epa p {
+.epa p, .epa2 p, .epa3 p {
   padding: 0 0 0.5rem 1rem;
   margin: 0;
 }
-.epa p strong {
+.epa p strong, .epa2 p strong, .epa3 p strong {
   position: absolute;
   right: 2rem;
 }
 
-/*RESPONSIVE*/
+/* RESPONSIVE */
 @media screen and (min-width: 450px) and (max-width: 1024px) {
   .ville i {
     padding-right: 1%;
@@ -365,7 +446,9 @@ footer ul a {
   }
 
   .listefonction {
-    width: 70%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
   }
   .listefonction ol .fonc::before {
     left: 0.3rem;
@@ -374,6 +457,14 @@ footer ul a {
   .btn-heart {
     position: absolute;
     margin-top: 2%;
+  }
+
+  .platsmenu .h3menu {
+    width: 5%;
+  }
+
+  .omfimg {
+    padding-top: 2%;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -405,15 +496,48 @@ footer ul a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-left: 5%;
   }
   .fonctionnement .fonc {
-    margin-right: 10rem;
     width: 20%;
+    margin-right: 10%;
   }
-  .fonctionnement .fonc::before {
-    display: flex;
+  .fonctionnement .fonc .number {
+    position: relative;
+    left: -5%;
+  }
+
+  .backgreyresto {
     flex-direction: row;
-    left: 77rem;
+    width: 100%;
+    flex-wrap: nowrap;
+    padding-top: 0;
+    padding-bottom: 2%;
+  }
+  .backgreyresto figure {
+    position: relative;
+    right: 4%;
+    margin-top: 4%;
+  }
+  .backgreyresto a {
+    width: 25rem;
+  }
+
+  .omfimg {
+    padding-top: 1%;
+  }
+
+  /* MENUS */
+  .blocmenu .h3menu {
+    width: 8%;
+  }
+
+  .blocmenu {
+    display: flex;
+    justify-content: space-between;
+  }
+  .blocmenu .entreespa, .blocmenu .platspa, .blocmenu .dessertspa {
+    width: 21%;
   }
 }
 

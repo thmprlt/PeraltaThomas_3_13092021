@@ -6,6 +6,26 @@
   font-family: "shrikhandregular";
   src: url("Shrikhand-Regular.otf");
 }
+#loaderback {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  background: white;
+  width: 100%;
+  height: 100%;
+  animation: back 2s linear forwards;
+}
+
+@keyframes back {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 #loader {
   border: 10px solid #F3F3F3;
   border-top: 10px solid #9356DC;
@@ -25,33 +45,57 @@
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-  from {
     opacity: 1;
     visibility: visible;
   }
-  to {
+  100% {
+    transform: rotate(360deg);
     opacity: 0;
     visibility: hidden;
   }
 }
 .epa, .epa2, .epa3 {
-  animation: 0.5s linear forwards slide;
+  animation: 0.4s linear forwards slide;
 }
 
-.epa {
+.m1 {
   animation-delay: 0s;
 }
 
-.epa2 {
+.m2 {
   animation-delay: 0.1s;
 }
 
-.epa3 {
+.m3 {
   animation-delay: 0.2s;
+}
+
+.m4 {
+  animation-delay: 0.3s;
+}
+
+.m5 {
+  animation-delay: 0.4s;
+}
+
+.m6 {
+  animation-delay: 0.5s;
+}
+
+.m7 {
+  animation-delay: 0.6s;
+}
+
+.m8 {
+  animation-delay: 0.7s;
+}
+
+.m9 {
+  animation-delay: 0.8s;
+}
+
+.m10 {
+  animation-delay: 0.9s;
 }
 
 @keyframes slide {
@@ -263,39 +307,35 @@ ol .fonc i {
   border: transparent;
   background-color: #fff;
 }
-
-.btn-heart .nogradient, .btn-heart .gradient {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-heart .nogradient {
-  background-color: transparent;
-  color: black;
-}
-
-.btn-heart .gradient {
-  z-index: -1;
-  width: 100%;
-  height: 0;
-}
-
-.btn-heart:hover .nogradient {
-  color: transparent;
-  z-index: -1;
-}
-
 .btn-heart:hover .gradient {
   z-index: 1;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
   transition: 0.4s;
   height: 100%;
+}
+.btn-heart:hover .nogradient {
+  color: transparent;
+  z-index: -1;
+}
+.btn-heart .nogradient, .btn-heart .gradient {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-heart .nogradient {
+  background-color: transparent;
+  color: black;
+}
+.btn-heart .gradient {
+  z-index: -1;
+  width: 100%;
+  height: 0;
 }
 
 footer {
@@ -491,12 +531,11 @@ footer ul a {
   }
 
   .fonctionnement {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-left: 5%;
+    padding-left: 10%;
   }
   .fonctionnement .fonc {
     width: 20%;
@@ -520,7 +559,7 @@ footer ul a {
     margin-top: 4%;
   }
   .backgreyresto a {
-    width: 25rem;
+    width: 22rem;
   }
 
   .omfimg {
@@ -537,7 +576,7 @@ footer ul a {
     justify-content: space-between;
   }
   .blocmenu .entreespa, .blocmenu .platspa, .blocmenu .dessertspa {
-    width: 21%;
+    width: 25%;
   }
 }
 

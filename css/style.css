@@ -55,7 +55,9 @@
   }
 }
 .epa, .epa2, .epa3 {
+  cursor: pointer;
   animation: 0.4s linear forwards slide;
+  opacity: 0;
 }
 
 .m1 {
@@ -239,6 +241,9 @@ ol .fonc i {
   color: #969696;
   padding: 0 1.5rem 0 1.5rem;
 }
+ol .fonc:hover i {
+  color: #9356DC;
+}
 
 .backgreyresto {
   background-color: #f7f7f7;
@@ -294,7 +299,7 @@ ol .fonc i {
   margin: 0.2rem 0 0.5rem 0.5rem;
 }
 
-.btn-heart {
+.btn-heart, .btn-heart-menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,7 +312,7 @@ ol .fonc i {
   border: transparent;
   background-color: #fff;
 }
-.btn-heart:hover .gradient {
+.btn-heart:hover .gradient, .btn-heart-menu:hover .gradient {
   z-index: 1;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
@@ -318,21 +323,21 @@ ol .fonc i {
   transition: 0.4s;
   height: 100%;
 }
-.btn-heart:hover .nogradient {
+.btn-heart:hover .nogradient, .btn-heart-menu:hover .nogradient {
   color: transparent;
   z-index: -1;
 }
-.btn-heart .nogradient, .btn-heart .gradient {
+.btn-heart .nogradient, .btn-heart .gradient, .btn-heart-menu .nogradient, .btn-heart-menu .gradient {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.btn-heart .nogradient {
+.btn-heart .nogradient, .btn-heart-menu .nogradient {
   background-color: transparent;
   color: black;
 }
-.btn-heart .gradient {
+.btn-heart .gradient, .btn-heart-menu .gradient {
   z-index: -1;
   width: 100%;
   height: 0;
@@ -402,9 +407,11 @@ footer ul a {
   align-items: center;
   padding-top: 0.5rem;
 }
-.titleheart i {
+.titleheart .btn-heart-menu {
   position: absolute;
+  background: #f7f7f7;
   right: 2rem;
+  margin-top: 0;
   font-size: 24px;
 }
 
@@ -451,6 +458,7 @@ footer ul a {
 .epa, .epa2, .epa3 {
   background: white;
   border-radius: 15px;
+  box-shadow: 0.2rem 0.2rem 10px #f0f0f0;
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
@@ -466,6 +474,39 @@ footer ul a {
 .epa p strong, .epa2 p strong, .epa3 p strong {
   position: absolute;
   right: 2rem;
+}
+.epa p .pricemenu, .epa2 p .pricemenu, .epa3 p .pricemenu {
+  display: flex;
+}
+.epa .check, .epa2 .check, .epa3 .check {
+  background-color: #99E2D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  border-radius: 0 15px 15px 0;
+  padding: 1.3rem 0 1.4rem 0;
+}
+.epa .check .fas, .epa2 .check .fas, .epa3 .check .fas {
+  color: #fff;
+}
+
+.epa:hover .check {
+  -webkit-transition: width 0.3s linear;
+  -moz-transition: width 0.3s linear;
+  transition: width 0.3s linear;
+  width: 20%;
+}
+.epa:hover .check .fas {
+  transition: transform 0.3s linear;
+  transform: rotate(360deg);
+}
+.epa:not(:hover) .check {
+  -webkit-transition: width 0.3s linear;
+  -moz-transition: width 0.3s linear;
+  transition: width 0.3s linear;
+  width: 5%;
 }
 
 /* RESPONSIVE */
@@ -489,9 +530,6 @@ footer ul a {
     width: 50%;
     justify-content: center;
     align-items: center;
-  }
-  .listefonction ol .fonc::before {
-    left: 0.3rem;
   }
 
   .btn-heart {

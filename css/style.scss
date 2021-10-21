@@ -58,7 +58,9 @@
 }
 
 .epa, .epa2, .epa3 {
-    animation: 0.4s linear forwards slide; 
+    cursor: pointer;
+    animation: 0.4s linear forwards slide;
+    opacity: 0;
 }
 .m1 {
     animation-delay: 0s;
@@ -252,6 +254,12 @@ ol {
             color: rgb(150, 150, 150);
             padding: 0 1.5rem 0 1.5rem;
         }
+
+        &:hover {
+            i {
+                color: #9356DC;
+            }
+        }
     }
 }
 
@@ -318,7 +326,7 @@ ol {
 }
 
 
-.btn-heart {
+.btn-heart, .btn-heart-menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -437,9 +445,11 @@ footer {
     align-items: center;
     padding-top: .5rem;
 
-    i {
+    .btn-heart-menu {
         position: absolute;
+        background: rgb(247, 247, 247);
         right: 2rem;
+        margin-top: 0;
         font-size: 24px;
     }
 }
@@ -491,6 +501,7 @@ footer {
 .epa, .epa2, .epa3 {
     background: white;
     border-radius: 15px;
+    box-shadow: .2rem .2rem 10px #f0f0f0;
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
@@ -507,6 +518,50 @@ footer {
         strong {
             position: absolute;
             right: 2rem;
+        }
+
+        .pricemenu {
+            display: flex;
+
+        }
+    }
+
+    .check {
+        background-color: #99E2D0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        border-radius: 0 15px 15px 0;
+        padding: 1.3rem 0 1.4rem 0;
+    
+        .fas {
+            color: #fff;
+        }
+    }
+    
+}
+
+.epa {
+    &:hover {
+        .check {
+        -webkit-transition: width 0.3s linear;
+        -moz-transition: width 0.3s linear;
+        transition: width 0.3s linear;
+        width: 20%;
+            .fas {
+                transition: transform 0.3s linear;
+                transform: rotate(360deg)
+            }
+        }  
+    }
+    &:not(:hover) {
+        .check {
+            -webkit-transition: width 0.3s linear;
+            -moz-transition: width 0.3s linear;
+            transition: width 0.3s linear;
+            width: 5%;
         }
     }
 }
@@ -535,10 +590,6 @@ footer {
         width: 50%;
         justify-content: center;
         align-items: center;
-
-        ol .fonc::before {
-            left: .3rem;
-        }
     }
 
     .btn-heart {

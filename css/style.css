@@ -1,10 +1,10 @@
 @font-face {
   font-family: "robotoregular";
-  src: url("Roboto-Regular-webfont.woff");
+  src: url("assets/Roboto-Regular-webfont.woff");
 }
 @font-face {
   font-family: "shrikhandregular";
-  src: url("Shrikhand-Regular.otf");
+  src: url("assets/Shrikhand-Regular.otf");
 }
 #loaderback {
   display: flex;
@@ -353,6 +353,7 @@ footer div {
 footer ul {
   list-style-type: none;
   padding: 0 0 1.5rem 1.5rem;
+  margin-bottom: 0;
 }
 footer ul li {
   padding-bottom: 0.3rem;
@@ -466,7 +467,6 @@ footer ul a {
 .epa h4, .epa2 h4, .epa3 h4 {
   padding: 0.5rem 0 0 1rem;
   margin: 0;
-  width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -475,7 +475,6 @@ footer ul a {
   padding: 0 0 0.5rem 1rem;
   margin: 0;
   text-overflow: ellipsis;
-  width: 75%;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -492,6 +491,7 @@ footer ul a {
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
+  overflow: hidden;
 }
 .epa .name, .epa2 .name, .epa3 .name {
   width: 85%;

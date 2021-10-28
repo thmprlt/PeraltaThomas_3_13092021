@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'robotoregular';
-    src: url('Roboto-Regular-webfont.woff');
+    src: url('assets/Roboto-Regular-webfont.woff');
 }
 
 @font-face {
     font-family: 'shrikhandregular';
-    src: url('Shrikhand-Regular.otf');
+    src: url('assets/Shrikhand-Regular.otf');
 }
 
 #loaderback {
@@ -387,6 +387,7 @@ footer {
     ul {
         list-style-type: none;
         padding: 0 0 1.5rem 1.5rem;
+        margin-bottom: 0;
 
         li {
             padding-bottom: .3rem;
@@ -509,7 +510,6 @@ footer {
     h4 {
         padding: .5rem 0 0 1rem;
         margin: 0;
-        width: 100%;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
@@ -519,7 +519,6 @@ footer {
         padding: 0 0 .5rem 1rem;
         margin: 0;
         text-overflow: ellipsis;
-        width: 75%;
         overflow: hidden;
         white-space: nowrap;
 
@@ -539,6 +538,7 @@ footer {
         flex-direction: row;
         align-items: flex-end;
         justify-content: space-between;
+        overflow: hidden;
     }
     .name{
         width: 85%;

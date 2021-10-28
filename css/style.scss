@@ -503,36 +503,52 @@ footer {
     border-radius: 15px;
     box-shadow: .2rem .2rem 10px #f0f0f0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 2rem;
     
     h4 {
         padding: .5rem 0 0 1rem;
         margin: 0;
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
     }
 
     p {
         padding: 0 0 .5rem 1rem;
         margin: 0;
+        text-overflow: ellipsis;
+        width: 75%;
+        overflow: hidden;
+        white-space: nowrap;
 
-        strong {
-            position: absolute;
-            right: 2rem;
-        }
-
-        .pricemenu {
-            display: flex;
-
-        }
     }
 
+    .price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1.1rem;
+        padding-right: 1rem;
+    }
+
+    .epa1hp {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .name{
+        width: 85%;
+    }
     .check {
         background-color: #99E2D0;
         display: flex;
+        overflow: hidden;
         align-items: center;
         justify-content: center;
-        position: absolute;
-        right: 0;
         border-radius: 0 15px 15px 0;
         padding: 1.3rem 0 1.4rem 0;
     
@@ -543,7 +559,7 @@ footer {
     
 }
 
-.epa {
+.epa, .epa2, .epa3 {
     &:hover {
         .check {
         -webkit-transition: width 0.3s linear;
@@ -561,7 +577,7 @@ footer {
             -webkit-transition: width 0.3s linear;
             -moz-transition: width 0.3s linear;
             transition: width 0.3s linear;
-            width: 5%;
+            width: 0;
         }
     }
 }

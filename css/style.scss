@@ -668,20 +668,39 @@ footer {
     }
 
     .backgreyresto {
+        display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         width: 100%;
-        flex-wrap: nowrap;
         padding-top: 0;
         padding-bottom: 2%;
+        justify-content: center;
+        align-items: center;
 
         figure {
+            flex-direction: column;
+            width: 35%;
             position: relative;
-            right: 4%;
             margin-top: 4%;
+
+            figcaption {
+                flex-direction: column;
+                height: 4.5rem;
+            }
+        }
+
+        .btn-heart {
+            padding-bottom: 1.2rem;
         }
 
         a {
-            width: 22rem;
+            width: 100%;
+        }
+
+        h2 {
+            position: absolute;
+            left: 0;
+            bottom: 15rem;
         }
     }
 
